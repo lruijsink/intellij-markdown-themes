@@ -1,6 +1,12 @@
 :root {
+    --font-heading: Graphik, Helvetica, sans-serif;
+    --font-weight-heading: 600;
+    --font-text: Lucida, Open Sans, Arial, sans-serif;
+    --font-size-text: 15px;
+    --line-height-text: 1.5em;
     --color-bg-html: #111418;
     --color-bg-body: #17191d;
+    --color-shadow-body: #081215;
     --color-border-h1: #272a2d;
     --color-heading: #b5bfc7;
     --color-text: #a5aab0;
@@ -12,7 +18,7 @@
     --color-pre-bg: #222529;
     --color-pre-border: #444;
     --color-pre-code-text: #bbb;
-    --color-table-border: #292b32;
+    --color-table-border: #2b2d34;
     --color-bq-code-text: #ddccbb;
     --color-bq-code-bg: #35373f;
     --color-bq-bg: #1a1f27;
@@ -27,24 +33,25 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --color-bg-html: #ebe8e5;
-        --color-bg-body: #f9f6f3;
+        --color-bg-html: #eaecef;
+        --color-bg-body: #f7fafb;
+        --color-shadow-body: #e0e1e3;
         --color-border-h1: #e2e4e7;
-        --color-heading: #3d4249;
+        --color-heading: #4d5259;
         --color-text: #5b6067;
         --color-code-text: #7a5c4a;
         --color-code-bg: #f0ece7;
-        --color-link: #2266cc;
+        --color-link: #3377dd;
         --color-link-code-bg: #e6edf7;
-        --color-shadow: #f3edea;
-        --color-pre-bg: #f9efeb;
-        --color-pre-border: #dac5b6;
+        --color-shadow: #eaedef;
+        --color-pre-bg: #eceff5;
+        --color-pre-border: #cfd5e0;
         --color-pre-code-text: #55504d;
         --color-table-border: #e0dddb;
         --color-bq-code-text: #6b4a2f;
         --color-bq-code-bg: #eae6da;
-        --color-bq-bg: #eef2f7;
-        --color-bq-border: #b7c6e0;
+        --color-bq-bg: #e3edfa;
+        --color-bq-border: #c7d6f1;
         --color-bq-text: #34497e;
         --color-bq-heading: #3d4879;
         --color-bq-link: #1a5fb4;
@@ -68,6 +75,7 @@ body {
     margin: 0 auto;
     box-sizing: border-box;
     min-height: 100%;
+    box-shadow: 0 0 35px 10px var(--color-shadow-body);
 }
 
 h1 {
@@ -79,20 +87,38 @@ h1 {
 
 h2 {
     font-size: 27px;
-    margin-top: 40px;
-    margin-bottom: -4px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    max-width: 600px;
 }
 
 h3 {
-    font-size: 21px;
-    margin-top: 20px;
-    margin-bottom: -2px;
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 10px;
 }
 
 h4 {
-    font-size: 19px;
-    margin-top: 20px;
-    margin-bottom: -12px;
+    font-size: 17px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 10px 0 15px 0;
+}
+
+pre, table, blockquote {
+    margin: 12px -16px 32px -16px;
+    box-shadow: 0 2px 4px 1px var(--color-shadow);
+}
+
+ul {
+    margin: 0 0 20px 0;
+}
+
+li {
+    margin: 4px 0 5px 0;
 }
 
 pre, code, pre * {
@@ -101,9 +127,10 @@ pre, code, pre * {
 }
 
 h1, h2, h3, h4 {
-    font-family: Georgia, Times New Roman, serif;
-    font-weight: 300;
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
     color: var(--color-heading);
+
     code {
         font-size: 0.9em;
         padding: 0.2em 0.35em;
@@ -111,10 +138,9 @@ h1, h2, h3, h4 {
 }
 
 p, blockquote, a, td, li, th {
-    font-family: Optima, Open Sans, Arial, sans-serif;
-    line-height: 1.5em;
-    font-size: 17px;
-    font-weight: thin;
+    font-family: var(--font-text);
+    line-height: var(--line-height-text);
+    font-size: var(--font-size-text);
     color: var(--color-text);
 }
 
@@ -137,9 +163,7 @@ pre {
     line-height: 1.7em;
     background: var(--color-pre-bg);
     border-radius: 10px;
-    box-shadow: 0 0 5px 2px var(--color-shadow);
     border: 1px solid var(--color-pre-border);
-    margin: 24px -16px;
     padding: 12px 16px;
     width: calc(100% + 32px);
 }
@@ -149,20 +173,10 @@ pre code, blockquote pre code {
     color: var(--color-pre-code-text);
 }
 
-ul {
-    margin-bottom: 20px;
-}
-
-li {
-    margin: 6px 0;
-}
-
 table {
     border: 1px solid var(--color-table-border) !important;
-    box-shadow: 0 0 5px 2px var(--color-shadow);
     border-radius: 10px;
-    padding: 5px 16px;
-    margin: 24px -16px;
+    padding: 5px 16px 12px 16px;
     width: calc(100% + 32px);
 }
 
@@ -192,11 +206,11 @@ blockquote code {
 blockquote {
     background: var(--color-bq-bg);
     border-radius: 15px;
-    box-shadow: 0 0 5px 2px var(--color-shadow);
     border: 1px solid var(--color-bq-border);
     border-left-width: 7px;
     padding: 15px;
-    margin: 24px -16px 24px -21px;
+    margin-left: -21px;
+
     h1, h2, h3, h4, th {
         color: var(--color-bq-heading);
     }
@@ -223,4 +237,9 @@ blockquote table, blockquote pre {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+}
+
+hr {
+    border: 1px solid var(--color-table-border);
+    margin: 50px 0;
 }
