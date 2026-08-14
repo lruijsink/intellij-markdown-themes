@@ -1,22 +1,22 @@
 :root {
-    --color-bg-html: #121417;
+    --color-bg-html: #111418;
     --color-bg-body: #17191d;
     --color-border-h1: #272a2d;
     --color-heading: #b5bfc7;
-    --color-text: #959aa0;
+    --color-text: #a5aab0;
     --color-code-text: #cfbaaf;
     --color-code-bg: #272629;
     --color-link: #59e;
     --color-link-code-bg: #202937;
-    --color-shadow: #121417;
+    --color-shadow: #101317;
     --color-pre-bg: #222529;
     --color-pre-border: #444;
     --color-pre-code-text: #bbb;
-    --color-table-border: #26292f;
+    --color-table-border: #292b32;
     --color-bq-code-text: #ddccbb;
     --color-bq-code-bg: #35373f;
     --color-bq-bg: #1a1f27;
-    --color-bq-border: #202d45;
+    --color-bq-border: #24324a;
     --color-bq-text: #a7bac8;
     --color-bq-heading: #b5bfc7;
     --color-bq-link: #5af;
@@ -61,7 +61,7 @@ html {
 
 body {
     background: var(--color-bg-body);
-    max-width: 800px;
+    max-width: 1065px;
     padding: 0 25px 150px 25px;
     padding-inline: clamp(25px, 5.5cqw, 60px);
     border: 1px solid var(--color-bg-body);
@@ -71,8 +71,28 @@ body {
 }
 
 h1 {
-    padding-bottom: 12px;
+    font-size: 36px;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
     border-bottom: 2px solid var(--color-border-h1);
+}
+
+h2 {
+    font-size: 27px;
+    margin-top: 40px;
+    margin-bottom: -4px;
+}
+
+h3 {
+    font-size: 21px;
+    margin-top: 20px;
+    margin-bottom: -2px;
+}
+
+h4 {
+    font-size: 19px;
+    margin-top: 20px;
+    margin-bottom: -12px;
 }
 
 pre, code, pre * {
@@ -80,21 +100,20 @@ pre, code, pre * {
     border-radius: 0.4em;
 }
 
-h1, h2, h3, h4, th {
-    font-family: Publico Text, Produkt, Charter, Helvetica Neue, Helvetica, sans-serif;
-    font-weight: 300;
+h1, h2, h3, h4 {
+    font-family: Georgia, Times New Roman, serif;
     font-weight: 300;
     color: var(--color-heading);
     code {
         font-size: 0.9em;
-    padding: 0.2em 0.35em;
+        padding: 0.2em 0.35em;
     }
 }
 
-p, blockquote, a, td {
-    font-family: Optima, Helvetica Neueu, Arial, sans-serif;
-    line-height: 1.4em;
-    font-size: 16px;
+p, blockquote, a, td, li, th {
+    font-family: Optima, Open Sans, Arial, sans-serif;
+    line-height: 1.5em;
+    font-size: 17px;
     font-weight: thin;
     color: var(--color-text);
 }
@@ -115,11 +134,12 @@ a code {
 }
 
 pre {
+    line-height: 1.7em;
     background: var(--color-pre-bg);
     border-radius: 10px;
     box-shadow: 0 0 5px 2px var(--color-shadow);
     border: 1px solid var(--color-pre-border);
-    margin: 20px -16px;
+    margin: 24px -16px;
     padding: 12px 16px;
     width: calc(100% + 32px);
 }
@@ -129,12 +149,20 @@ pre code, blockquote pre code {
     color: var(--color-pre-code-text);
 }
 
+ul {
+    margin-bottom: 20px;
+}
+
+li {
+    margin: 6px 0;
+}
+
 table {
     border: 1px solid var(--color-table-border) !important;
     box-shadow: 0 0 5px 2px var(--color-shadow);
     border-radius: 10px;
     padding: 5px 16px;
-    margin: 20px -16px;
+    margin: 24px -16px;
     width: calc(100% + 32px);
 }
 
@@ -168,7 +196,7 @@ blockquote {
     border: 1px solid var(--color-bq-border);
     border-left-width: 7px;
     padding: 15px;
-    margin: 20px -22px;
+    margin: 24px -16px 24px -21px;
     h1, h2, h3, h4, th {
         color: var(--color-bq-heading);
     }
