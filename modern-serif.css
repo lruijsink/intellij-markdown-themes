@@ -1,0 +1,245 @@
+:root {
+    --font-heading: PT Serif Caption, Times, serif;
+    --font-weight-heading: bold;
+    --font-text: Kefa III, Charter, Times, serif;
+    --font-size-text: 17px;
+    --line-height-text: 1.4em;
+    --color-bg-html: #111418;
+    --color-bg-body: #17191d;
+    --color-shadow-body: #081215;
+    --color-border-h1: #272a2d;
+    --color-heading: #b5bfc7;
+    --color-text: #a5aab0;
+    --color-code-text: #cfbaaf;
+    --color-code-bg: #272629;
+    --color-link: #59e;
+    --color-link-code-bg: #202937;
+    --color-shadow: #101317;
+    --color-pre-bg: #222529;
+    --color-pre-border: #444;
+    --color-pre-code-text: #bbb;
+    --color-table-border: #2b2d34;
+    --color-bq-code-text: #ddccbb;
+    --color-bq-code-bg: #35373f;
+    --color-bq-bg: #1a1f27;
+    --color-bq-border: #24324a;
+    --color-bq-text: #a7bac8;
+    --color-bq-heading: #b5bfc7;
+    --color-bq-link: #5af;
+    --color-bq-link-code-bg: #2d374a;
+    --color-bq-table-border: #29324a;
+    --color-bq-shadow: #1a1c1f;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-bg-html: #eaecef;
+        --color-bg-body: #f7fafb;
+        --color-shadow-body: #e0e1e3;
+        --color-border-h1: #e2e4e7;
+        --color-heading: #4d5259;
+        --color-text: #5b6067;
+        --color-code-text: #7a5c4a;
+        --color-code-bg: #f0ece7;
+        --color-link: #3377dd;
+        --color-link-code-bg: #e6edf7;
+        --color-shadow: #eaedef;
+        --color-pre-bg: #eceff5;
+        --color-pre-border: #cfd5e0;
+        --color-pre-code-text: #55504d;
+        --color-table-border: #e0dddb;
+        --color-bq-code-text: #6b4a2f;
+        --color-bq-code-bg: #eae6da;
+        --color-bq-bg: #e3edfa;
+        --color-bq-border: #c7d6f1;
+        --color-bq-text: #34497e;
+        --color-bq-heading: #3d4879;
+        --color-bq-link: #1a5fb4;
+        --color-bq-link-code-bg: #dbe6f5;
+        --color-bq-table-border: #d6daef;
+        --color-bq-shadow: #e2e8f5;
+    }
+}
+
+html {
+    background: var(--color-bg-html);
+    height: 100%;
+}
+
+body {
+    background: var(--color-bg-body);
+    max-width: 1065px;
+    padding: 0 25px 150px 25px;
+    padding-inline: clamp(25px, 5.5cqw, 60px);
+    border: 1px solid var(--color-bg-body);
+    margin: 0 auto;
+    box-sizing: border-box;
+    min-height: 100%;
+    box-shadow: 0 0 35px 10px var(--color-shadow-body);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--color-border-h1);
+}
+
+h2 {
+    font-size: 27px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    max-width: 600px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 17px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 10px 0 15px 0;
+}
+
+pre, table, blockquote {
+    margin: 12px -16px 32px -16px;
+    box-shadow: 0 2px 4px 1px var(--color-shadow);
+}
+
+ul {
+    margin: 0 0 20px 0;
+}
+
+li {
+    margin: 4px 0 5px 0;
+}
+
+pre, code, pre * {
+    font-size: 13px;
+    border-radius: 0.4em;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-heading);
+
+    code {
+        font-size: 0.9em;
+        padding: 0.2em 0.35em;
+    }
+}
+
+p, blockquote, a, td, li, th {
+    font-family: var(--font-text);
+    line-height: var(--line-height-text);
+    font-size: var(--font-size-text);
+    color: var(--color-text);
+}
+
+code {
+    color: var(--color-code-text);
+    background: var(--color-code-bg);
+    font-weight: unset;
+    font-style: unset;
+}
+
+a, a code {
+    color: var(--color-link);
+}
+
+a code {
+    background: var(--color-link-code-bg);
+}
+
+pre {
+    line-height: 1.7em;
+    background: var(--color-pre-bg);
+    border-radius: 10px;
+    border: 1px solid var(--color-pre-border);
+    padding: 12px 16px;
+    width: calc(100% + 32px);
+}
+
+pre code, blockquote pre code {
+    background: none;
+    color: var(--color-pre-code-text);
+}
+
+table {
+    border: 1px solid var(--color-table-border) !important;
+    border-radius: 10px;
+    padding: 5px 16px 12px 16px;
+    width: calc(100% + 32px);
+}
+
+tr, td {
+    border: none !important;
+}
+
+th {
+    text-align: left;
+    border: none !important;
+    padding: 4px 40px 4px 0 !important;
+}
+
+td {
+    padding: 14px 40px 5px 0 !important;
+}
+
+td:last-child, th:last-child {
+    padding-right: 0 !important;
+}
+
+blockquote code {
+    color: var(--color-bq-code-text);
+    background: var(--color-bq-code-bg);
+}
+
+blockquote {
+    background: var(--color-bq-bg);
+    border-radius: 15px;
+    border: 1px solid var(--color-bq-border);
+    border-left-width: 7px;
+    padding: 15px;
+    margin-left: -21px;
+
+    h1, h2, h3, h4, th {
+        color: var(--color-bq-heading);
+    }
+}
+
+blockquote p, blockquote td {
+    color: var(--color-bq-text);
+}
+
+blockquote a, blockquote a code {
+    color: var(--color-bq-link);
+}
+
+blockquote a code {
+    background: var(--color-bq-link-code-bg);
+}
+
+blockquote table {
+    border: 1px solid var(--color-bq-table-border) !important;
+}
+
+blockquote table, blockquote pre {
+    box-shadow: 0 0 5px 2px var(--color-bq-shadow);
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+hr {
+    border: 1px solid var(--color-table-border);
+    margin: 50px 0;
+}
