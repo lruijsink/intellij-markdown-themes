@@ -9,7 +9,8 @@
     --color-shadow-body: #091113;
     --color-border-h1: #272a2d;
     --color-heading: #b5bfc7;
-    --color-text: #a5aab0;
+    --color-text: #a0a6ab;
+    --color-bold: #c5cad0;
     --color-code-text: #d5b59f;
     --color-code-bg: #262320;
     --color-link: #59e;
@@ -20,18 +21,18 @@
     --color-pre-border: #444;
     --color-pre-code-text: #bbb;
     --color-table-outline: #000;
-    --color-table-border: #2b2d34;
-    --color-table-separator: #23262a;
+    --color-table-border: #363a3d;
+    --color-table-separator: #2a2d2f;
     --color-bq-code-text: #d9baa7;
     --color-bq-code-bg: #2e2b29;
     --color-bq-bg: #181f2d;
-    --color-bq-border: #253048;
+    --color-bq-border: #2a3653;
     --color-bq-text: #a3b7c8;
     --color-bq-heading: #8da5c7;
     --color-bq-link: #5af;
     --color-bq-link-code-bg: #242d42;
     --color-bq-table-outline: #000;
-    --color-bq-table-border: #29324a;
+    --color-bq-table-border: #313f5b;
     --color-bq-table-separator: #202d3d;
     --color-bq-shadow: #1a1c1f;
 }
@@ -44,6 +45,7 @@
         --color-border-h1: #e2e4e7;
         --color-heading: #4d5259;
         --color-text: #5b6067;
+        --color-bold: #505458;
         --color-code-text: #7a5c4a;
         --color-code-bg: #f0ece7;
         --color-link: #3377dd;
@@ -55,7 +57,7 @@
         --color-pre-code-text: #55504d;
         --color-table-outline: #e0e2e5;
         --color-table-border: #ffffff;
-        --color-table-separator: #e7e9ed;
+        --color-table-separator: #e8eaee;
         --color-bq-code-text: #6b4a2f;
         --color-bq-code-bg: #eae6da;
         --color-bq-bg: #eff5fc;
@@ -78,7 +80,7 @@ html {
 
 body {
     background: var(--color-bg-body);
-    max-width: 1065px;
+    max-width: 1137px;
     padding: 0 25px 150px 25px;
     padding-inline: clamp(25px, 5.5cqw, 60px);
     border: 1px solid var(--color-bg-body);
@@ -114,11 +116,11 @@ h4 {
 }
 
 p {
-    margin: 15px 0 25px 0;
+    margin: 15px 0 15px 0;
 }
 
 pre, table, blockquote {
-    margin: 12px -16px 32px -16px;
+    margin: 24px -16px 32px -16px;
     box-shadow: 0 2px 4px 1px var(--color-shadow);
 }
 
@@ -127,21 +129,16 @@ ul {
 }
 
 li {
-    margin: 4px 0 5px 0;
+    margin: 6px 0 7px 0;
 }
 
-li table, li pre {
-    margin-inline: 0;
-    width: calc(100% + 16px);
-}
-
-li blockquote {
+li table, li pre, li blockquote {
     margin-inline: 0;
     width: calc(100% + 16px);
 }
 
 pre, code, pre * {
-    font-size: 13px;
+    font-size: 14px;
     border-radius: 0.4em;
 }
 
@@ -163,6 +160,10 @@ p, blockquote, a, td, li, th {
     color: var(--color-text);
 }
 
+b, strong, th {
+    color: var(--color-bold);
+}
+
 code {
     color: var(--color-code-text);
     background: var(--color-code-bg);
@@ -179,12 +180,12 @@ a code {
 }
 
 pre {
-    line-height: 1.7em;
+    line-height: 1.6em;
     background: var(--color-pre-bg);
     border-radius: 10px;
     outline: 1px solid var(--color-pre-outline);
     border: 1px solid var(--color-pre-border);
-    padding: 12px 16px;
+    padding: 12px 4px 12px 16px;
     width: calc(100% + 32px);
 }
 
@@ -197,7 +198,6 @@ table {
     outline: 1px solid var(--color-table-outline);
     border: 1px solid var(--color-table-border) !important;
     border-radius: 10px;
-    width: auto !important;
     width: calc(100% + 32px);
     display: table !important;
     table-layout: auto !important;
@@ -207,19 +207,19 @@ table {
 tr, th, td {
     border: none !important;
     text-align: left;
-    padding: 10px 30px 11px 16px !important;
+    padding: 9px 0 10px 16px !important;
 }
 
 th {
-    padding: 5px 30px 6px 16px !important;
+    padding: 4px 0 5px 16px !important;
 }
 
 tr:last-of-type td {
-    padding-bottom: 13px !important;
+    padding-bottom: 11px !important;
 }
 
 td:last-of-type, th:last-of-type {
-    padding-right: 18px !important;
+    padding-right: 5px !important;
 }
 
 td {
@@ -233,10 +233,10 @@ blockquote code {
 
 blockquote {
     background: var(--color-bq-bg);
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid var(--color-bq-border);
     border-left-width: 7px;
-    padding: 14px 18px;
+    padding: 16px 18px;
     margin-left: -24px;
 
     h1, h2, h3, h4, th {
